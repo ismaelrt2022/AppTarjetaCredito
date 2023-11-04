@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-body">
+       <h5 class="titulo">LISTAR TARJETAS</h5>
+    </div>
+     <table class="table">
+        <thead>
+            <th>Titular</th>
+            <th>Fecha Expiracion</th>
+            <th>CVV</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody> <!--Recorremos array para llenar tabla de listado de tarjetas-->
+            <tr *ngFor="let tarjeta of listadoTarjetas; let i=index;" >
+                <td>{{tarjeta.titular}}</td>
+                <td>{{tarjeta.fechaExpiracion}}</td>
+                <td>{{tarjeta.cvv}}</td>
+                <td class="fa fa-solid fa-pen-to-square text-info"></td>
+                <td  (click)="eliminarTarjeta(tarjeta.id)" class="fa fa-solid fa-trash text-danger"></td>
+            </tr>
+        </tbody>
+     </table>
+</div> 
